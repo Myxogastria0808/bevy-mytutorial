@@ -69,8 +69,8 @@ fn greet_people(query: Query<&Name, With<Person>>) {
 // 以下のようにして、Queryの中身を変更できる。
 fn update_people(mut query: Query<&mut Name, With<Person>>) {
     for mut name in &mut query {
-        if name.0 == "ALice" {
-            name.0 = "Elaina".to_string();
+        if name.0 == "Alice" {
+            name.0 = "Elena".to_string();
             break;
         }
     }
