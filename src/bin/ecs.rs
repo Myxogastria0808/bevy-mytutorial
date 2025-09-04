@@ -6,7 +6,7 @@ fn main() {
     App::new()
         // Start ... アプリケーションの開始時に一度だけ実行されるシステム
         .add_systems(Startup, add_people)
-        // Update ... 毎フレーム実行されるシステム
+        // Update ... 更新時に毎回実行されるシステム
         // 基本的には、タプルはできる限り並列で処理されるが、
         // chain() メソッドを使用すると、タプルの順に実行されるように強制できる。
         .add_systems(Update, (hello_world, (update_people, greet_people).chain()))
@@ -52,7 +52,7 @@ fn add_people(mut commands: Commands) {
 }
 
 //* Update System *//
-// 毎フレーム実行されるシステム
+// 更新時に毎回実行されるシステム
 // シンプルなパターン
 fn hello_world() {
     println!("Hello, world!");
