@@ -4,3 +4,5 @@
 # Nix
 /.direnv
 
+# Assets
+/assets
